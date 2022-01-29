@@ -2,8 +2,8 @@ const CoinMarketCap_apiToken = '[Your Token]'
 const sheetName = 'BIT Buy';
 const coinName = 'bit';
 const fiatCurrency = 'USD';
-const sheetRow = 4;
-const sheetColumn = 2;
+const sheetRow = 4;        // if not use to set for google sheet ,
+const sheetColumn = 2;     // delete these two line,and change the urlFetch to another request
 
 // Set your google sheet range to your coin's price
 function getCoinPrice() {
@@ -34,17 +34,25 @@ function getCoinPrice() {
         let d = new Date();
         return 'update at ' + d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.toLocaleTimeString();
     }
-    //if you change the request method just delete these downside code
+    
+    //if you change the request method just delete these downside three line code
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     var sheet = ss.getSheetByName(sheetName);
     var sheetRange = sheet.getRange(sheetRow, sheetColumn);
-
+    //***
+    
     var resetRangePrice = (lastPrice) => {
-        sheetRange.clearContent();
-        sheetRange.setValue(lastPrice);
-        sheetRange.setNote(nowTime());
-        return lastPrice;
+        if(sheetName){
+            sheetRange.clearContent();
+            sheetRange.setValue(lastPrice);
+            sheetRange.setNote(nowTime());
+            return lastPrice;
+        }
+        else{
+            return console.log(lastPrice)
+        }
     }
+    
     console.log(resetRangePrice(responsePrice));
 }
 

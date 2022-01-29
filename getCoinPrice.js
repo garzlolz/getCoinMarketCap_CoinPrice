@@ -23,7 +23,8 @@ function getCoinPrice() {
             json: true,
             gzip: true
         };
-
+        
+        //Change the request if you have to 
         let respone = UrlFetchApp.fetch(url, requestOptions);
         return JSON.parse(respone.getContentText());
     }

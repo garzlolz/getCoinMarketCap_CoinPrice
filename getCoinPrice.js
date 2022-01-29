@@ -34,7 +34,7 @@ function getCoinPrice() {
         let d = new Date();
         return 'update at ' + d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.toLocaleTimeString();
     }
-
+    //if you change the request method just delete these downside code
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     var sheet = ss.getSheetByName(sheetName);
     var sheetRange = sheet.getRange(sheetRow, sheetColumn);

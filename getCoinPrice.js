@@ -1,9 +1,9 @@
 const CoinMarketCap_apiToken = '[Your Token]'
-const sheetName = 'BIT Buy';
-const coinName = 'bit';
-const fiatCurrency = 'USD';
-const sheetRow = 4;        // if not use to set for google sheet ,
-const sheetColumn = 2;     // delete these two line,and change the urlFetch to another request
+const sheetName = 'BIT Buy';    //sheetName for google sheet or just delete it
+const coinName = 'bit';         //Coin's Name
+const fiatCurrency = 'USD';     //Fiat Coin
+const sheetRow = 4;             // If not use to set for google sheet ,
+const sheetColumn = 2;          // Delete these two line,and change the urlFetch to another request
 
 // Set your google sheet range to your coin's price
 function getCoinPrice() {
